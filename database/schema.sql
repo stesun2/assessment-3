@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS customer CASCADE;
 DROP TABLE IF EXISTS addresses CASCADE;
 DROP TABLE IF EXISTS order_info CASCADE;
 DROP TABLE IF EXISTS product_info CASCADE;
-DROP TABLE IF EXISTS category_info CASCADE;
+-- DROP TABLE IF EXISTS category_info CASCADE;
 
 CREATE TABLE customer (
     id          serial        PRIMARY KEY,
@@ -37,13 +37,13 @@ CREATE TABLE product_info (
     description  VARCHAR(48)  NOT NULL,
     product_id   INTEGER      NOT NULL,  
     unit_price   MONEY        NOT NULL,
-    category_id  INTEGER
+    category     VARCHAR(24)
 
 );
 
-CREATE TABLE category_info (
-    id           serial       PRIMARY KEY,
-    category     VARCHAR(24)  NOT NULL
-);
+-- CREATE TABLE category_info (
+--     id           serial       PRIMARY KEY,
+--     category     VARCHAR(24)  NOT NULL
+-- );
 
 
