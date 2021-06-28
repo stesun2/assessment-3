@@ -41,9 +41,5 @@ CREATE TABLE product_info (
 
 );
 
--- CREATE TABLE category_info (
---     id           serial       PRIMARY KEY,
---     category     VARCHAR(24)  NOT NULL
--- );
 
 
