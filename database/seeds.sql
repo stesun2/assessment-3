@@ -63,19 +63,3 @@ values (4, 'Flamethrower', 'A highly dangerous flammable device', '004', 1499.99
 
 INSERT into product_info (id, product_name, description, product_id, unit_price, category)
 values (5, 'Drone', 'A robotic drone', '005', 499.99, 'Office');
-
--- Category Info
--- INSERT into category_info (id, category)
--- values (1, 'Kitchen');
-
--- INSERT into category_info (id, category)
--- values (2, 'Bedroom');
-
--- INSERT into category_info (id, category)
--- values (3, 'Living Room');
-
--- INSERT into category_info (id, category)
--- values (4, 'Bathroom');
-
--- INSERT into category_info (id, category)
--- values (5, 'Office');
