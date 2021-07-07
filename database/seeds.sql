@@ -1,20 +1,22 @@
 -- Seed data goes here
+-- database/seeds.sql:
+-- > SQL containing the seed data to populate your database tables
 
 -- Insert Customers
-INSERT into customer (id, first_name, last_name, email, address_id, order_id)
-values(1, 'Bugs', 'Bunny', 'BugsBunny@gmail.com', 1, 1);
+INSERT into customer (id, first_name, last_name, email, address_id)
+values(1, 'Bugs', 'Bunny', 'BugsBunny@gmail.com', 1);
 
-INSERT into customer (id, first_name, last_name, email, address_id, order_id)
-values(2, 'Jon', 'Smith', 'JSmith@yahoo.com', 2, 2);
+INSERT into customer (id, first_name, last_name, email, address_id)
+values(2, 'Jon', 'Smith', 'JSmith@yahoo.com', 2);
 
-INSERT into customer (id, first_name, last_name, email, address_id, order_id)
-values(3, 'Martha', 'Stewart', 'MStewart@gmail.com', 3, 3);
+INSERT into customer (id, first_name, last_name, email, address_id)
+values(3, 'Martha', 'Stewart', 'MStewart@gmail.com', 3);
 
-INSERT into customer (id, first_name, last_name, email, address_id, order_id)
-values(4, 'Elon', 'Musk', 'ElonMusk@tesla.com', 4, 4);
+INSERT into customer (id, first_name, last_name, email, address_id)
+values(4, 'Elon', 'Musk', 'ElonMusk@tesla.com', 4);
 
-INSERT into customer (id, first_name, last_name, email, address_id, order_id)
-values(5, 'Jeff', 'Bezos', 'JeffBezos@amazon.com', 5, 5);
+INSERT into customer (id, first_name, last_name, email, address_id)
+values(5, 'Jeff', 'Bezos', 'JeffBezos@amazon.com', 5);
 
 -- Insert Addresses
 INSERT into addresses (id, line_1, city, state, zipcode)

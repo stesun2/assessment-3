@@ -1,4 +1,5 @@
 -- Queries go here
+
 -- Retrieve the first name, last name, and email address of all customers that have a Gmail email address.
 SELECT customer.first_name, customer.last_name, customer.email
 FROM customer 
