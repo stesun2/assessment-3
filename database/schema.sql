@@ -1,8 +1,5 @@
 -- Schema creation goes here
 -- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
-
-
-
 -- Part I: Back-end Database
 
 -- Your database should be designed to store customer, product, category, and order information. 
@@ -14,45 +11,45 @@
 -- > Retrieve all product details for products that are under the "Kitchen" category
 -- > Retrieve the product names and prices of all products ordered by the customer with first name "Bugs" and last name "Bunny"
 
-
-DROP TABLE IF EXISTS customer CASCADE;
 DROP TABLE IF EXISTS addresses CASCADE;
-DROP TABLE IF EXISTS order_info CASCADE;
-DROP TABLE IF EXISTS product_info CASCADE;
--- DROP TABLE IF EXISTS category_info CASCADE;
-
-CREATE TABLE customer (
-    id          serial        PRIMARY KEY,
-    first_name  VARCHAR(24)   NOT NULL,
-    last_name   VARCHAR(24)   NOT NULL,
-    email       VARCHAR(48)   NOT NULL,
-    address_id  INTEGER,      
-);
+DROP TABLE IF EXISTS customers CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
 
 CREATE TABLE addresses (
     id          serial        PRIMARY KEY,
-    line_1      VARCHAR(255)  NOT NULL,
-    city        VARCHAR(24)   NOT NULL,
-    state       VARCHAR(2)    NOT NULL,
-    zipcode     INTEGER       NOT NULL
-
+    line_1      varchar(48)   NOT NULL,
+    city        varchar(24)   NOT NULL,
+    state       varchar(2)    NOT NULL,
+    zipcode     varchar(10)   NOT NULL
 );
 
-CREATE TABLE order_info (
+CREATE TABLE customers (
+    id          serial        PRIMARY KEY,
+    first_name  varchar(24)   NOT NULL,
+    last_name   varchar(24)   NOT NULL,
+    email       varchar(48)   NOT NULL,
+    address_id  integer       REFERENCES addresses          
+);
+
+CREATE TABLE products (
     id           serial       PRIMARY KEY,
-    order_id     INTEGER      NOT NULL,
-    order_date   DATE         NOT NULL
+    product_name varchar(48)  NOT NULL,
+    description  varchar(48)  NOT NULL,
+    unit_price   money        NOT NULL
 );
 
-CREATE TABLE product_info (
+CREATE TABLE categories (
+    id            serial      PRIMARY KEY,
+    category_name varchar(24) NOT NULL, 
+    product_id    integer     REFERENCES products
+);
+
+CREATE TABLE orders (
     id           serial       PRIMARY KEY,
-    product_name VARCHAR(48)  NOT NULL,
-    description  VARCHAR(48)  NOT NULL,
-    product_id   INTEGER      NOT NULL,  
-    unit_price   MONEY        NOT NULL,
-    category     VARCHAR(24)
-
+    order_number INTEGER      NOT NULL,
+    order_date   DATE         NOT NULL,
+    customer_id  integer      REFERENCES customers,
+    product_id   integer      REFERENCES products
 );
-
-
-
