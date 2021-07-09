@@ -1,0 +1,33 @@
+body {
+  background-color: #EAF6F6;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+} 
+
+image-display {
+  display: flex;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+
+}
+
+img {
+  width: 25%;
+  height: 50%;
+}
+
+
+
+/* image-display {
+  display: flex;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+
+}
+
+img {
+  width: 25%;
+  height: 50%;
+} */
