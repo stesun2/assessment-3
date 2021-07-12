@@ -16,6 +16,7 @@ DROP TABLE IF EXISTS customers CASCADE;
 DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
 DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS order_products CASCADE;
 
 CREATE TABLE addresses (
     id          serial        PRIMARY KEY,
@@ -42,14 +43,18 @@ CREATE TABLE products (
 
 CREATE TABLE categories (
     id            serial      PRIMARY KEY,
-    category_name varchar(24) NOT NULL, 
-    product_id    integer     REFERENCES products
+    category_name varchar(24) NOT NULL 
+    -- product_id    integer     REFERENCES products
 );
 
 CREATE TABLE orders (
     id           serial       PRIMARY KEY,
-    order_number INTEGER      NOT NULL,
     order_date   DATE         NOT NULL,
-    customer_id  integer      REFERENCES customers,
-    product_id   integer      REFERENCES products
+    customer_id  integer      REFERENCES customers
+);
+
+CREATE TABLE order_products (
+    id           serial       PRIMARY KEY,
+    order_id     integer      REFERENCES orders,
+    product_id   integer      REFERENCES products          
 );

@@ -50,36 +50,55 @@ INSERT into products (id, product_name, description, unit_price)
 values (5, 'Drone', 'A robotic drone', 499.99);
 
 -- Category Info
-INSERT into categories (id, category_name, product_id)
-values (1, 'Kitchen', 1);
+INSERT into categories (id, category_name)
+values (1, 'Kitchen');
 
-INSERT into categories (id, category_name, product_id)
-values (2, 'Kitchen', 2);
+INSERT into categories (id, category_name)
+values (2, 'Kitchen');
 
-INSERT into categories (id, category_name, product_id)
-values (3, 'Bedroom', 3);
+INSERT into categories (id, category_name)
+values (3, 'Bedroom');
 
-INSERT into categories (id, category_name, product_id)
-values (4, 'Office', 4);
+INSERT into categories (id, category_name)
+values (4, 'Office');
 
-INSERT into categories (id, category_name, product_id)
-values (5, 'Office', 5);
+INSERT into categories (id, category_name)
+values (5, 'Office');
 
 -- Insert Order Info
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(1, 1111, '2021-06-27', 1, 1);
+INSERT into orders (id, order_date, customer_id)
+values(1, '2021-06-27', 1);
 
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(2, 1112, '2021-06-28', 1, 2);
+INSERT into orders (id, order_date, customer_id)
+values(2, '2021-06-28', 1);
 
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(3, 2222, '2020-09-27', 2, 2);
+INSERT into orders (id, order_date, customer_id)
+values(3, '2020-09-27', 2);
 
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(4, 3333, '2020-05-20', 3, 3);
+INSERT into orders (id, order_date, customer_id)
+values(4, '2020-05-20', 3);
 
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(5, 4444, '2020-04-20', 4, 4);
+INSERT into orders (id, order_date, customer_id)
+values(5, '2020-04-20', 4);
 
-INSERT into orders (id, order_number, order_date, customer_id, product_id)
-values(6, 5555, '2021-06-20', 5, 5);
+INSERT into orders (id, order_date, customer_id)
+values(6, '2021-06-20', 5);
+
+-- Order Products info
+INSERT into order_products(id, order_id, product_id)
+values(1, 1, 1);
+
+INSERT into order_products(id, order_id, product_id)
+values(2, 2, 1);
+
+INSERT into order_products(id, order_id, product_id)
+values(3, 2, 2);
+
+INSERT into order_products(id, order_id, product_id)
+values(4, 3, 3);
+
+INSERT into order_products(id, order_id, product_id)
+values(5, 4, 4);
+
+INSERT into order_products(id, order_id, product_id)
+values(6, 5, 5);
